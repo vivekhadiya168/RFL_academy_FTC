@@ -14,6 +14,10 @@ public class test_gamepad extends LinearOpMode {
     private DcMotor motor2;
     private Servo rgb;
     private Servo s1;
+    private double power1 = 0;
+    private double power2 = 0.5;
+    private double power3 = 1;
+    private double reverse_power = -0.5;
 
 
 
@@ -35,81 +39,175 @@ public class test_gamepad extends LinearOpMode {
         while (opModeIsActive()) {
 
             if (gamepad1.a) {
-                motor1.setPower(1);
+                motor1.setPower(power3);
+
+                telemetry.addData("initialized", motor1.getPower());
+                telemetry.update();
             }
             else if (gamepad1.b){
-                motor1.setPower(0);
+                motor1.setPower(power1);
+
+                telemetry.addData("initialized", motor1.getPower());
+                telemetry.update();
             }
             else if (gamepad1.x){
                 s1.setPosition(0.5);
+
+                telemetry.addData("initialized", s1.getPosition());
+                telemetry.update();
 
             }
             else if (gamepad1.y){
                 s1.setPosition(0.7);
 
+                telemetry.addData("initialized", s1.getPosition());
+                telemetry.update();
+
             }
             else if (gamepad1.left_bumper){
-                motor1.setPower(0.5);
+                motor1.setPower(power2);
+
+                telemetry.addData("initialized", motor1.getPower());
+                telemetry.update();
+
                 rgb.setPosition(0.333);
+
+                telemetry.addData("initialized", rgb.getPosition());
+                telemetry.update();
 
             }
             else if (gamepad1.right_bumper){
-                motor2.setPower(0.5);
+                motor2.setPower(power2);
+
+                telemetry.addData("initialized", motor2.getPower());
+                telemetry.update();
+
                 rgb.setPosition(0.555);
+
+                telemetry.addData("initialized", rgb.getPosition());
+                telemetry.update();
 
             }
             else if (gamepad1.left_trigger_pressed){
-                motor1.setPower(0.0);
+                motor1.setPower(power1);
+
+                telemetry.addData("initialized", motor1.getPower());
+                telemetry.update();
+
                 rgb.setPosition(0.0);
+
+                telemetry.addData("initialized", rgb.getPosition());
+                telemetry.update();
 
             }
             else if (gamepad1.right_trigger_pressed){
-                motor2.setPower(0.0);
+                motor2.setPower(power1);
+
+                telemetry.addData("initialized", motor2.getPower());
+                telemetry.update();
+
                 rgb.setPosition(0.0);
+
+                telemetry.addData("initialized", rgb.getPosition());
+                telemetry.update();
 
             }
             else if (gamepad1.dpad_left){
                 s1.setPosition(0.0);
 
+                telemetry.addData("initialized", s1.getPosition());
+                telemetry.update();
+
             }
             else if (gamepad1.dpad_down){
                 s1.setPosition(0.2);
+
+                telemetry.addData("initialized", s1.getPosition());
+                telemetry.update();
 
             }
             else if (gamepad1.dpad_right){
                 s1.setPosition(0.5);
 
+                telemetry.addData("initialized", s1.getPosition());
+                telemetry.update();
+
             }
             else if (gamepad1.dpad_up){
                 s1.setPosition(0.8);
 
+                telemetry.addData("initialized", s1.getPosition());
+                telemetry.update();
+
             }
             else if (gamepad2.a) {
                 s1.setPosition(0.2);
+
+                telemetry.addData("initialized", s1.getPosition());
+                telemetry.update();
+
                 rgb.setPosition(0.333);
+
+                telemetry.addData("initialized", rgb.getPosition());
+                telemetry.update();
             }
             else if (gamepad2.b){
                 s1.setPosition(0.9);
+
+                telemetry.addData("initialized", s1.getPosition());
+                telemetry.update();
+
                 rgb.setPosition(0.555);
+
+                telemetry.addData("initialized", rgb.getPosition());
+                telemetry.update();
             }
             else if (gamepad2.left_bumper){
-                motor1.setPower(-0.5);
+                motor1.setPower(reverse_power);
+
+                telemetry.addData("initialized", motor1.getPower());
+                telemetry.update();
+
                 rgb.setPosition(0.333);
+
+                telemetry.addData("initialized", rgb.getPosition());
+                telemetry.update();
 
             }
             else if (gamepad2.right_bumper){
-                motor2.setPower(-0.5);
+                motor2.setPower(reverse_power);
+
+                telemetry.addData("initialized", motor2.getPower());
+                telemetry.update();
+
                 rgb.setPosition(0.555);
+
+                telemetry.addData("initialized", rgb.getPosition());
+                telemetry.update();
 
             }
             else if (gamepad2.left_trigger_pressed){
                 motor1.setPower(0.0);
+
+                telemetry.addData("initialized", motor1.getPower());
+                telemetry.update();
+
                 rgb.setPosition(0.0);
+
+                telemetry.addData("initialized", s1.getPosition());
+                telemetry.update();
 
             }
             else if (gamepad2.right_trigger_pressed){
                 motor2.setPower(0.0);
+
+                telemetry.addData("initialized", motor2.getPower());
+                telemetry.update();
+
                 rgb.setPosition(0.0);
+
+                telemetry.addData("initialized", s1.getPosition());
+                telemetry.update();
 
             }
 
